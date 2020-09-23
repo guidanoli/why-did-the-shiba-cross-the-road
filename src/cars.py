@@ -5,7 +5,7 @@ import numpy as np
 
 pygame.init()
 
-DEBUG = 1
+DEBUG = 0
 
 class Colours:
     Background = 100, 100, 100
@@ -198,7 +198,8 @@ class Game:
         screen.blit(font.render(f"Score: {self.score:07d}", True, (0, 0, 0)), (32, 10))
         screen.blit(font.render(f"Level: {self.level:07d}", True, (0, 0, 0)), (532, 10))
         if self.end:
-            screen.blit(font.render("Game Over!", True, (100, 0, 0)), (232, 10))
+            text = font.render("Game Over!", True, (100, 0, 0))
+            screen.blit(text, text.get_rect(centerx=width//2, top=10))
 
 game = Game()
 
